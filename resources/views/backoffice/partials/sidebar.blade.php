@@ -3,7 +3,7 @@
         <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
     </button>
     <div>
-        <a href="index.html" class="sidebar-logo">
+        <a href="{{ route('dashboard') }}" class="sidebar-logo">
             <img src="{{ asset('/backoffice/assets/images/logo.png') }}" alt="site logo" class="light-logo">
             <img src="{{ asset('/backoffice/assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('/backoffice/assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon">
@@ -12,7 +12,7 @@
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
             <li class="dropdown">
-                <a href="javascript:void(0)">
+                <a href="{{ route('dashboard') }}">
                     <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
                     <span>Dashboard</span>
                 </a>
@@ -66,6 +66,7 @@
                     <span>Kanban</span>
                 </a>
             </li> --}}
+            <li class="sidebar-menu-group-title">Products</li>
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
