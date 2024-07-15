@@ -14,4 +14,18 @@ class SupplierController extends Controller
 
         return view('backoffice.supplier.index', compact('suppliers'));
     }
+    public function create()
+    {
+
+        return view('backoffice.supplier.create');
+    }
+    public function store(Request $request)
+    {
+
+
+
+        return redirect()->route('supplier.index');
+    }
+
+
 }
