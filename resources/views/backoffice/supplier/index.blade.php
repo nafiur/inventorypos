@@ -46,7 +46,6 @@
                             </th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Role</th>
                             <th scope="col" class="text-center">Status</th>
                             <th scope="col" class="text-center">Action</th>
                         </tr>
@@ -69,9 +68,14 @@
                                 </div>
                             </td>
                             <td><span class="text-md mb-0 fw-normal text-secondary-light">{{ $supplier->email }}</span></td>
-                            <td>{{ $supplier->role }}</td>
                             <td class="text-center">
+                                @if($supplier->status == 0)
+
+                                <span class="bg-warning-focus text-warning-600 border border-warning-main px-24 py-4 radius-4 fw-medium text-sm">Inactive</span>
+                                @elseif($supplier->status == 1)
+
                                 <span class="bg-success-focus text-success-600 border border-success-main px-24 py-4 radius-4 fw-medium text-sm">Active</span>
+                                @endif
                             </td>
                             <td class="text-center">
                                 <div class="d-flex align-items-center gap-10 justify-content-center">
