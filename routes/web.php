@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/supplier/create/', [SupplierController::class, 'store'])->name('supplier.store');
     Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->name('supplier.edit');
     Route::post('/supplier/update/', [SupplierController::class, 'update'])->name('supplier.update');
-
+    Route::get('/supplier/show/{id}', [SupplierController::class, 'show'])->name('supplier.show');
 });
 
 Route::middleware('auth')->group(function () {

@@ -55,12 +55,14 @@ class SupplierController extends Controller
             return redirect()->back()->withInput();
         }
     }
+
     public function edit($id)
     {
         $supplier = Supplier::findorfail($id);
 
         return view('backoffice.supplier.edit', compact('supplier'));
     }
+
     public function update(Request $request)
     {
         $validate = $request->validate([
@@ -92,6 +94,15 @@ class SupplierController extends Controller
             flash()->error($exception->getMessage());
             return redirect()->back()->withInput();
         }
+    }
+
+
+
+    public function show($id)
+    {
+        $supplier = Supplier::findorfail($id);
+
+        return view('backoffice.supplier.show', compact('supplier'));
     }
 
 
