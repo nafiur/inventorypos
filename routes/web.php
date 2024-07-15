@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
@@ -18,6 +19,11 @@ Route::middleware('auth')->group(function () {
     //Users
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+
+    //Supplier
+    Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier.index');
+
+
 });
 
 Route::middleware('auth')->group(function () {

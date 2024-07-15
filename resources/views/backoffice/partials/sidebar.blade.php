@@ -34,11 +34,11 @@
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-menu-group-title">Application</li>
+            <li class="sidebar-menu-group-title">Suppliers</li>
             <li>
-                <a href="email.html">
-                    <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
-                    <span>Email</span>
+                <a href="{{ route('supplier.index') }}">
+                    <iconify-icon icon="carbon:building-insights-3" class="menu-icon"></iconify-icon>
+                    <span>Suppliers</span>
                 </a>
             </li>
             <li>
