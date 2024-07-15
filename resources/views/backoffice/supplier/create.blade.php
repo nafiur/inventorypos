@@ -24,7 +24,7 @@
                 <h5 class="card-title mb-0">Supplier Information</h5>
             </div>
             <div class="card-body">
-                <form class="row gy-3 needs-validation" action="{{ route('supplier.store') }}" method="POST">
+                <form class="row gy-3 needs-validation" action="{{ route('supplier.store') }}" method="POST" novalidate>
                     @csrf
                     <div class="col-md-6">
                         <label class="form-label">Name</label>
@@ -32,10 +32,12 @@
                             <span class="icon">
                                 <iconify-icon icon="f7:person"></iconify-icon>
                             </span>
-                            <input type="text" name="#0" class="form-control" name="name" placeholder="Enter Name" required>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" required>
+                            @error('name')
                             <div class="invalid-feedback">
-                                Please provide Name
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -44,10 +46,12 @@
                             <span class="icon">
                                 <iconify-icon icon="mage:email"></iconify-icon>
                             </span>
-                            <input type="email" name="#0" name="email" class="form-control" placeholder="Enter Email" required>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Email" required>
+                            @error('email')
                             <div class="invalid-feedback">
-                                Please provide email address
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -56,10 +60,12 @@
                             <span class="icon">
                                 <iconify-icon icon="solar:phone-calling-linear"></iconify-icon>
                             </span>
-                            <input type="text" name="#0" class="form-control" name="mobile_no" placeholder="+1 (555) 000-0000" required>
+                            <input type="text" name="mobile_no" class="form-control @error('mobile_no') is-invalid @enderror" placeholder="+1 (555) 000-0000" required>
+                            @error('mobile_no')
                             <div class="invalid-feedback">
-                                Please provide phone number
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -68,10 +74,12 @@
                             <span class="icon">
                                 <iconify-icon icon="f7:person"></iconify-icon>
                             </span>
-                            <input type="text" name="#0" class="form-control" name="address" placeholder="Enter Address" required>
+                            <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Enter Address" required>
+                            @error('address')
                             <div class="invalid-feedback">
-                                Please provide Name
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -79,6 +87,7 @@
                         <button class="btn btn-primary-600" type="submit">Submit form</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
