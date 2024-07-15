@@ -105,5 +105,22 @@ class SupplierController extends Controller
         return view('backoffice.supplier.show', compact('supplier'));
     }
 
+    public function delete($id)
+    {
+
+
+        try {
+            $supplier = Supplier::findorfail($id);
+            $supplier->delete();
+
+            flash()->success('Supplier Info Deleted successfully');
+            return redirect()->route('supplier.index');
+        } catch (\Exception $exception) {
+            flash()->error($exception->getMessage());
+            return redirect()->back()->withInput();
+        }
+
+    }
+
 
 }
