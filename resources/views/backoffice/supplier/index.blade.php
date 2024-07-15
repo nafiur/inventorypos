@@ -63,7 +63,6 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="{{ asset('/backoffice/assets/images/users/user1.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
                                     <div class="flex-grow-1">
                                         <span class="text-md mb-0 fw-normal text-secondary-light">{{ $supplier->name }}</span>
                                     </div>
@@ -76,15 +75,15 @@
                             </td>
                             <td class="text-center">
                                 <div class="d-flex align-items-center gap-10 justify-content-center">
-                                    <button type="button" class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
+                                    <a href="{{ route('supplier.show', $supplier->id) }}" class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
                                         <iconify-icon icon="majesticons:eye-line" class="icon text-xl"></iconify-icon>
-                                    </button>
-                                    <button type="button" class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
+                                    </a>
+                                    <a href="{{ route('supplier.edit', $supplier->id) }}" class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
                                         <iconify-icon icon="lucide:edit" class="menu-icon"></iconify-icon>
-                                    </button>
-                                    <button type="button" class="remove-item-btn bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
+                                    </a>
+                                    <a href="{{ route('supplier.edit', $supplier->id) }}" class="remove-item-btn bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
                                         <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
