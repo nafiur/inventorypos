@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductCategoryController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -48,6 +49,25 @@ Route::middleware('auth')->group(function () {
     Route::post('/unit/update/', [UnitController::class, 'update'])->name('unit.update');
     Route::get('/unit/show/{id}', [UnitController::class, 'show'])->name('unit.show');
     Route::get('/unit/delete/{id}', [UnitController::class, 'delete'])->name('unit.delete');
+
+
+    //Producat Category
+    Route::get('/product/category', [ProductCategoryController::class, 'index'])->name('product.category.index');
+    Route::get('/product/category/create', [ProductCategoryController::class, 'create'])->name('product.category.create');
+    Route::post('/product/category/create/', [ProductCategoryController::class, 'store'])->name('product.category.store');
+    Route::get('/product/category/edit/{id}', [ProductCategoryController::class, 'edit'])->name('product.category.edit');
+    Route::post('/product/category/update/', [ProductCategoryController::class, 'update'])->name('product.category.update');
+    Route::get('/product/category/show/{id}', [ProductCategoryController::class, 'show'])->name('product.category.show');
+    Route::get('/product/category/delete/{id}', [ProductCategoryController::class, 'delete'])->name('product.category.delete');
+
+    //Producat Category
+    Route::get('/product', [ProductCategoryController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductCategoryController::class, 'create'])->name('product.create');
+    Route::post('/product/create/', [ProductCategoryController::class, 'store'])->name('product.store');
+    Route::get('/product/edit/{id}', [ProductCategoryController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/', [ProductCategoryController::class, 'update'])->name('product.update');
+    Route::get('/product/show/{id}', [ProductCategoryController::class, 'show'])->name('product.show');
+    Route::get('/product/delete/{id}', [ProductCategoryController::class, 'delete'])->name('product.delete');
 
 
 

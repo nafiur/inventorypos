@@ -48,7 +48,7 @@
                     <span>Customers</span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="chat-message.html">
                     <iconify-icon icon="bi:chat-dots" class="menu-icon"></iconify-icon>
                     <span>Chat</span>
@@ -65,24 +65,18 @@
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
                     <span>Kanban</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
-                    <span>Invoice</span>
+                    <span>Products</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="invoice-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List</a>
+                        <a href="{{ route('product.index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Product List</a>
                     </li>
                     <li>
-                        <a href="invoice-preview.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
-                    </li>
-                    <li>
-                        <a href="invoice-add.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
-                    </li>
-                    <li>
-                        <a href="invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
+                        <a href="{{ route('product.category.index') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Product Category</a>
                     </li>
                 </ul>
             </li>
