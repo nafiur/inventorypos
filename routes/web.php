@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\ProductCategoryController;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //Users
@@ -51,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/unit/delete/{id}', [UnitController::class, 'delete'])->name('unit.delete');
 
 
-    //Producat Category
+    //Product Category
     Route::get('/product/category', [ProductCategoryController::class, 'index'])->name('product.category.index');
     Route::get('/product/category/create', [ProductCategoryController::class, 'create'])->name('product.category.create');
     Route::post('/product/category/create/', [ProductCategoryController::class, 'store'])->name('product.category.store');
@@ -60,14 +62,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/product/category/show/{id}', [ProductCategoryController::class, 'show'])->name('product.category.show');
     Route::get('/product/category/delete/{id}', [ProductCategoryController::class, 'delete'])->name('product.category.delete');
 
-    //Producat Category
-    Route::get('/product', [ProductCategoryController::class, 'index'])->name('product.index');
-    Route::get('/product/create', [ProductCategoryController::class, 'create'])->name('product.create');
-    Route::post('/product/create/', [ProductCategoryController::class, 'store'])->name('product.store');
-    Route::get('/product/edit/{id}', [ProductCategoryController::class, 'edit'])->name('product.edit');
-    Route::post('/product/update/', [ProductCategoryController::class, 'update'])->name('product.update');
-    Route::get('/product/show/{id}', [ProductCategoryController::class, 'show'])->name('product.show');
-    Route::get('/product/delete/{id}', [ProductCategoryController::class, 'delete'])->name('product.delete');
+    //Product
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/create/', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/show/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
 
 
