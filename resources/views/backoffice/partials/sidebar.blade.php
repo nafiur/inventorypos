@@ -36,9 +36,16 @@
             </li>
             <li class="sidebar-menu-group-title">Suppliers</li>
             <li>
-                <a href="{{ route('supplier.index') }}">
+                <a href="{{ route('supplier.index') }}" class="{{ request()->routeIs('supplier.*') ? 'active' : '' }} }}">
                     <iconify-icon icon="carbon:building-insights-3" class="menu-icon"></iconify-icon>
                     <span>Suppliers</span>
+                </a>
+            </li>
+            <li class="sidebar-menu-group-title">Customers</li>
+            <li>
+                <a href="{{ route('customer.index') }}" class="{{ request()->routeIs('customer.*') ? 'active' : '' }}">
+                    <iconify-icon icon="carbon:building-insights-3" class="menu-icon"></iconify-icon>
+                    <span>Customers</span>
                 </a>
             </li>
             <li>

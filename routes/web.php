@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
 
@@ -28,6 +29,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/supplier/update/', [SupplierController::class, 'update'])->name('supplier.update');
     Route::get('/supplier/show/{id}', [SupplierController::class, 'show'])->name('supplier.show');
     Route::get('/supplier/delete/{id}', [SupplierController::class, 'delete'])->name('supplier.delete');
+
+    //Customer
+    Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+    Route::post('/customer/create/', [CustomerController::class, 'store'])->name('customer.store');
+    Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+    Route::post('/customer/update/', [CustomerController::class, 'update'])->name('customer.update');
+    Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
+    Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+
+
+
 });
 
 Route::middleware('auth')->group(function () {
