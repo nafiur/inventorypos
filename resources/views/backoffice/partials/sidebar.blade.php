@@ -87,16 +87,16 @@
                 </ul>
             </li>
 
-            <li class="sidebar-menu-group-title">Application</li>
+            <li class="sidebar-menu-group-title">Configuration</li>
 
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
-                    <span>Components</span>
+                    <span>Configuration</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="typography.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Typography</a>
+                        <a href="{{ route('unit.index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Units</a>
                     </li>
                     <li>
                         <a href="colors.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Colors</a>
@@ -291,7 +291,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="company.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Company</a>
+                        <a href="{{ route('unit.index') }}" class="{{ request()->routeIs('customer.*') ? 'active' : '' }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Units</a>
                     </li>
                     <li>
                         <a href="notification.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Notification</a>

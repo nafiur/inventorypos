@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
@@ -38,6 +39,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/customer/update/', [CustomerController::class, 'update'])->name('customer.update');
     Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
     Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+
+    //Unit
+    Route::get('/unit', [UnitController::class, 'index'])->name('unit.index');
+    Route::get('/unit/create', [UnitController::class, 'create'])->name('unit.create');
+    Route::post('/unit/create/', [UnitController::class, 'store'])->name('unit.store');
+    Route::get('/unit/edit/{id}', [UnitController::class, 'edit'])->name('unit.edit');
+    Route::post('/unit/update/', [UnitController::class, 'update'])->name('unit.update');
+    Route::get('/unit/show/{id}', [UnitController::class, 'show'])->name('unit.show');
+    Route::get('/unit/delete/{id}', [UnitController::class, 'delete'])->name('unit.delete');
 
 
 
