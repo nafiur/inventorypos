@@ -21,9 +21,9 @@ class ProductCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word,
-            'status' => $this->faker->randomElement([0, 1]), // Example of random status
-            'created_by' => 1, // Adjust this according to your needs
+            'name' => $this->faker->unique()->words(3, true), // Using words to create more unique names
+            'status' => $this->faker->randomElement([0, 1]),
+            'created_by' => 1,
             'created_at' => Carbon::now(),
         ];
     }

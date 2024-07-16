@@ -10,6 +10,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\CustomerSeeder;
 use Database\Seeders\SupplierSeeder;
 use Illuminate\Support\Facades\Hash;
+use Database\Seeders\ProductCategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -42,6 +43,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(SupplierSeeder::class);
         $this->call(CustomerSeeder::class);
+        $this->call(ProductCategorySeeder::class);
         $this->call(ProductSeeder::class);
     }
 }

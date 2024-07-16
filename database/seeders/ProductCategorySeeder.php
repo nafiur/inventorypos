@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProductCategorySeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class ProductCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ProductCategory::factory()->count(10)->create(); // adjust the count as needed
     }
 }
