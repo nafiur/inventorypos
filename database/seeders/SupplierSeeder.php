@@ -14,7 +14,6 @@ class SupplierSeeder extends Seeder
      */
     public function run()
     {
-        Supplier::factory()->count(500)->create(); // adjust the count as needed
-        Customer::factory()->count(100)->create(); // adjust the count as needed
+        Supplier::factory()->count(50)->create();
     }
 }

@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Unit;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Database\Seeders\CustomerSeeder;
 use Database\Seeders\SupplierSeeder;
@@ -25,7 +27,21 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
+        Unit::factory()->create([
+            'name' => 'KG',
+            'status' => '1',
+        ]);
+        Unit::factory()->create([
+            'name' => 'Litre',
+            'status' => '1',
+        ]);
+        Unit::factory()->create([
+            'name' => 'Piece',
+            'status' => '1',
+        ]);
+
         $this->call(SupplierSeeder::class);
         $this->call(CustomerSeeder::class);
+        $this->call(ProductSeeder::class);
     }
 }
