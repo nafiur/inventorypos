@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
@@ -71,7 +73,27 @@ Route::middleware('auth')->group(function () {
     Route::get('/product/show/{id}', [ProductController::class, 'show'])->name('product.show');
     Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
+    // Purchase All Route
+    Route::controller(PurchaseController::class)->group(function () {
+        Route::get('/purchase', 'PurchaseAll')->name('purchase.all');
+        Route::get('/purchase/create', 'PurchaseCreate')->name('purchase.create');
+        Route::post('/purchase/store', 'PurchaseStore')->name('purchase.store');
+        Route::get('/purchase/delete/{id}', 'PurchaseDelete')->name('purchase.delete');
+        Route::get('/purchase/pending', 'PurchasePending')->name('purchase.pending');
+        Route::get('/purchase/approve/{id}', 'PurchaseApprove')->name('purchase.approve');
 
+        Route::get('/daily/purchase/report', 'DailyPurchaseReport')->name('daily.purchase.report');
+        Route::get('/daily/purchase/pdf', 'DailyPurchasePdf')->name('daily.purchase.pdf');
+
+    });
+
+});
+
+// Default All Route
+Route::controller(DefaultController::class)->group(function () {
+    Route::get('/get-category', 'GetCategory')->name('get-category');
+    Route::get('/get-product', 'GetProduct')->name('get-product');
+    Route::get('/check-product', 'GetStock')->name('check-product-stock');
 
 });
 

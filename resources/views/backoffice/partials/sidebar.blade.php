@@ -48,6 +48,13 @@
                     <span>Customers</span>
                 </a>
             </li>
+            <li class="sidebar-menu-group-title">Purchase</li>
+            <li>
+                <a href="{{ route('purchase.all') }}" class="{{ request()->routeIs('purchase.*') ? 'active' : '' }}">
+                    <iconify-icon icon="carbon:building-insights-3" class="menu-icon"></iconify-icon>
+                    <span>Purchase</span>
+                </a>
+            </li>
             {{-- <li>
                 <a href="chat-message.html">
                     <iconify-icon icon="bi:chat-dots" class="menu-icon"></iconify-icon>
